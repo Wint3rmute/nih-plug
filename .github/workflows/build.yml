@@ -73,6 +73,8 @@ jobs:
             package_args+=("-p" "$package")
           done
 
+          cargo xtask bundle-universal gain_gui_egui
+
           runner_name=${{ matrix.name }}
           if [[ $runner_name = 'macos-universal' ]]; then
             export MACOSX_DEPLOYMENT_TARGET=10.13
